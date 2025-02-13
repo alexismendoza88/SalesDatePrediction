@@ -16,7 +16,7 @@ The following prerequisites are required to build and run the solution:
 <br>Entity Framework Core 8
 <br>Angular 19
 
-#Resourses
+#Resources
 <br>database scripts find in the folder scripts/bdscripts.sql (sql  sever  20019+)
 <br>api/bakend find in src/Presentation/SalesDatePredictionWebApi (.net)
 <br>api/fronted find in src/Presentation/SalesDatePredictionWeb (angular)
