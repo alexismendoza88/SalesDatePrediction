@@ -1,0 +1,52 @@
+<mat-toolbar>
+  <span>Sales Date Prediction App</span>
+  <span class="flexExpand"></span>
+  <img height="60px" src="https://nserio.com/wp-content/uploads/2020/07/Full-Logo-TransParent-WhiteCenter-134x80-1.png">
+</mat-toolbar>
+<main class="main">
+
+  <div class="content">
+    <div class="example-table-container">
+      <h4>Customers</h4>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Customer Name" #input>
+    </mat-form-field>
+    <mat-progress-bar mode="indeterminate" *ngIf="doWork"></mat-progress-bar>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position CustomerName -->
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef> Customer Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
+      </ng-container>
+    
+      <!-- Name LastOrderDate -->
+      <ng-container matColumnDef="lastOrderDate">
+        <th mat-header-cell *matHeaderCellDef> Last Order Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastOrderDate | date: 'MM/dd/yyyy'}} </td>
+      </ng-container>
+    
+      <!-- Weight LastOrderDate -->
+      <ng-container matColumnDef="nextPredictedOrderDate">
+        <th mat-header-cell *matHeaderCellDef> Next Predicted Order </th>
+        <td mat-cell *matCellDef="let element"> {{element.nextPredictedOrderDate | date: 'MM/dd/yyyy'}} </td>
+      </ng-container>
+      <ng-container  matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"><a style="color: orangered;cursor: pointer;" (click)="showCustOrdersDialog(element.custid,element.customerName)">View Ordres</a><span>&nbsp;&nbsp;</span><a (click)="showCustRegisterOrdersDialog(element.custid,element.customerName)"style="color: green;cursor: pointer;">New Order</a></td>
+      </ng-container>   
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of data"></mat-paginator>
+  </div>
+</div>
+</main>
+<router-outlet />
