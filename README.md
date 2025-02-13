@@ -7,7 +7,7 @@ If you find this project useful, please give it a star. Thanks!
 #Getting Started
 The following prerequisites are required to build and run the solution:
 
-<br>.NET 9.0 SDK (latest version)
+<br>.NET 8.0 SDK (latest version)
 <br>Node.js (latest LTS, only required if you are using Angular )
 <br>sql  sever 20019+
 
