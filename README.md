@@ -20,3 +20,8 @@ The following prerequisites are required to build and run the solution:
 <br>database scripts find in the folder scripts/bdscripts.sql (sql  sever  20019+)
 <br>api/bakend find in src/Presentation/SalesDatePredictionWebApi (.net)
 <br>api/fronted find in src/Presentation/SalesDatePredictionWeb (angular)
+
+#IDE
+VISUAL STUDIO CODE 
+VISUAL STUDIO COMMUNITY OR PRO,ENTERPRISE
+SQL MANAGUEMENT STUDIO
